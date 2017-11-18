@@ -1,5 +1,7 @@
 import os
 import argparse
+from subprocess import call
+
 from img_to_text import convert_img_to_text
 
 parser = argparse.ArgumentParser()
@@ -20,9 +22,16 @@ for root, sub_folder, files in os.walk(image_directry):
             img_file_path = str(os.path.join(root, item))
             text_file_path = str(os.path.join(text_directry, folder, item.replace(os.path.splitext(img_file_path)[1], '.txt')))
             print(img_file_path, text_file_path)
-            text = convert_img_to_text(img_file_path)
 
-            with open(text_file_path, 'w') as file:
-                file.write(text)
+            # call for CONVERTIO
+            # os.system('php api/request.php ' + img_file_path + ' ' + text_file_path)
+
+            # call for ABBY
+            os.system('python abby-python-api process.py ' + img_file_path + ' ' + text_file_path)
+
+            # call for tesaract
+            # text = convert_img_to_text(img_file_path)
+            # with open(text_file_path, 'w') as file:
+            #     file.write(text)
         except Exception as e:
             print(str(e))
