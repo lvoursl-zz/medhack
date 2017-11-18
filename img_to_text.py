@@ -5,7 +5,7 @@ import pyocr.builders
 
 LANG = 'rus'
 
-def covert_img_to_text(img_name, check_rotation=True, verbose=False):
+def convert_img_to_text(img_name, check_rotation=True):
     try:
         tools = pyocr.get_available_tools()
         tool = tools[0]
