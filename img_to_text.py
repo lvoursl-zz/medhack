@@ -1,4 +1,3 @@
-# import the necessary packages
 from PIL import Image
 import pyocr
 import pyocr.builders
