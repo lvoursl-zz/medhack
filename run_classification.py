@@ -14,7 +14,6 @@ result_filename = str(image_filename.replace(os.path.splitext(image_filename)[1]
 print(image_filename, text_filename, result_filename)
 
 try:
-    raise Exception()
     # call for CONVERTIO
     # os.system('php api/request.php ' + img_file_path + ' ' + text_file_path)
 
@@ -23,12 +22,12 @@ try:
     print('OCR finished')
     with open(text_filename, 'r') as f:
         text = f.read()
-        print('filed loaded')
+        print('file loaded, start prediction')
         predictions = predict(text)
         print(predictions)
 
     with open(result_filename, 'w') as f:
-        f.write(predictions)
+        f.write(str(predictions))
 
     # call for tesaract
     # text = convert_img_to_text(img_file_path)
