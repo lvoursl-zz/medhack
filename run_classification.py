@@ -1,6 +1,8 @@
 import os
 import argparse
 
+from predict import predict
+
 parser = argparse.ArgumentParser()
 parser.add_argument('image_filename', type=str)
 
