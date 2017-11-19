@@ -17,7 +17,7 @@ try:
 
     # call for ABBY
     os.system('python2 abby-python-api/process.py ' + image_directry + ' ' + text_directry)
-
+    print('OCR finished')
     with open(text_directry, 'r') as f:
         text = f.read()
         predict(text)
