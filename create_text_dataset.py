@@ -30,7 +30,7 @@ for root, sub_folder, files in os.walk(image_directry):
                 # os.system('php api/request.php ' + img_file_path + ' ' + text_file_path)
 
                 # call for ABBY
-                os.system('python abby-python-api/process.py ' + img_file_path + ' ' + text_file_path)
+                os.system('python2 abby-python-api/process.py ' + img_file_path + ' ' + text_file_path)
 
                 # call for tesaract
                 # text = convert_img_to_text(img_file_path)
